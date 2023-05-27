@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.yellow,
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
@@ -70,67 +70,86 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
+
       body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            SizedBox(
+              height: 80,
+            ),
+            Text(
+              "Increment",
+              style: TextStyle(fontSize: 20),
+            ),
             Container(
-              width: 50,
-              height: 50,
-              color: Colors.black38,
+              width: 60,
+              height: 60,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: Colors.yellow,
+              ),
               child: IconButton(
-                icon: Icon(
-                  Icons.add,
-                  size: 20,
-                  color: Colors.yellow,
-                ),
+                icon: Icon(Icons.add, size: 30, color: Colors.grey),
                 onPressed: () {
                   context.read<Counter>().increment();
                   // Add button pressed
                 },
               ),
             ),
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Container(
-                  width: 50,
-                  height: 50,
-                  color: Colors.black38,
-                  child: IconButton(
-                    icon: Icon(
-                      Icons.remove,
-                      color: Colors.yellow,
-                    ),
-                    onPressed: () {
-                      context.read<Counter>().decrement();
-                      // Add button pressed
-                    },
-                  ),
+            SizedBox(
+              height: 20,
+            ),
+            Text(
+              "Decrement",
+              style: TextStyle(fontSize: 20),
+            ),
+            Container(
+              width: 60,
+              height: 60,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: Colors.yellow,
+              ),
+              child: IconButton(
+                icon: Icon(
+                  Icons.remove,
+                  color: Colors.grey,
+                  size: 30,
                 ),
-                Container(
-                  width: 50,
-                  height: 50,
-                  color: Colors.black38,
-                  child: IconButton(
-                    icon: Icon(
-                      Icons.add,
-                      size: 20,
-                      color: Colors.yellow,
-                    ),
-                    onPressed: () {
-                      context.read<Counter>().incrementBy10();
-                      // Add button pressed
-                    },
-                  ),
-                ),
-              ],
+                onPressed: () {
+                  context.read<Counter>().decrement();
+                  // Add button pressed
+                },
+              ),
             ),
             SizedBox(
-              height: 12,
+              height: 20,
+            ),
+            Text(
+              "Increment by 10",
+              style: TextStyle(fontSize: 20),
+            ),
+            Container(
+              width: 60,
+              height: 60,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: Colors.yellow,
+              ),
+              child: IconButton(
+                icon: Icon(
+                  Icons.add,
+                  size: 30,
+                  color: Colors.grey,
+                ),
+                onPressed: () {
+                  context.read<Counter>().incrementBy10();
+                  // Add button pressed
+                },
+              ),
+            ),
+            SizedBox(
+              height: 100,
             ),
             const Text(
               'You have pushed the button this many times:',
